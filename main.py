@@ -1,14 +1,6 @@
-from fastapi import FastAPI
-from pydantic import BaseModel
-from gemini import translate
+from os import getenv
+import uvicorn
 
-app = FastAPI()
-
-class TranslateModel(BaseModel):
-    text: str
-    from_lang: str
-    to_lang: str
-
-@app.post('/')
-def index(input:TranslateModel):
-    return translate(input.text, input.from_lang, input.to_lang)
+if __name__ == '__main__':
+    port = int(getenv('PORT', 8000))
+    uvicorn.run('app.api:app', host='0.0.0.0', port=port, reload=True)
