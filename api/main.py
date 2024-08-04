@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from gemini import translate
+from .gemini import translate
 
 app = FastAPI()
 
