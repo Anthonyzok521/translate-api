@@ -1,1 +1,3 @@
 translate-api-venv/
+.venv/
+venv/
