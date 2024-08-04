@@ -1,3 +1,9 @@
 translate-api-venv/
 .venv/
 venv/
+# Byte-compiled / optimized / DLL files
+__pycache__/
+gemini/__pycache__/
+*.py[cod]
+*$py.class
+.env
