@@ -9,6 +9,10 @@ class TranslateModel(BaseModel):
     from_lang: str
     to_lang: str
 
+@app.get('/', tags=["Root"])
+async def init():
+    return {'message':'Initialized'}
+
 @app.post('/')
-def index(input:TranslateModel):
+async def index(input:TranslateModel):
     return translate(input.text, input.from_lang, input.to_lang)
