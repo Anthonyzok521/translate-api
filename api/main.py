@@ -11,7 +11,7 @@ class TranslateModel(BaseModel):
 
 @app.get('/', tags=["Root"])
 async def init():
-    return {'message':'Initialized'}
+    return {'message' : 'Initialized'}
 
 @app.post('/')
 async def index(input:TranslateModel):
