@@ -9,7 +9,7 @@ class TranslateModel(BaseModel):
     from_lang: str
     to_lang: str
 
-@app.get('/', tags=["Root"])
+@app.get('/')
 async def init():
     return {'message' : 'Initialized'}
 
