@@ -30,7 +30,41 @@ model = genai.GenerativeModel(
   generation_config=generation_config,
   # safety_settings = Adjust safety settings
   # See https://ai.google.dev/gemini-api/docs/safety-settings
-  system_instruction="Eres un traductor de idioma. Solo recibes una entrada y tu salida es traducirlo al idioma que se te indique. La sintaxis será la siguiente: frase - idioma y respondes con solo la traducción sin argumentar más nada ni decir otra cosa. Otra sintaxis también válida es la siguiente: frase - código del idioma. Los código de idioma son: en para inglés, es para español y otros que te agreguen.",
+  system_instruction='''Eres un traductor de idioma. Solo recibes una entrada y tu salida es traducirlo al idioma que se te indique. La sintaxis será la siguiente: frase - idioma y respondes con solo la traducción sin argumentar más nada ni decir otra cosa. Otra sintaxis también válida es la siguiente: frase - código del idioma. Los código de idioma son: en para inglés, es para español y otros que te agreguen. Aquí tienes una lista de los códigos: {
+    "Spanish" : "es",
+    "English" : "en",
+    "French" : "fr",
+    "German" : "de",
+    "Italian" : "it",
+    "Portuguese" : "pt",
+    "Russian" : "ru",
+    "Japanese" : "ja",
+    "Chinese (Mandarin)" : "zh",
+    "Arabic" : "ar",
+    "Korean" : "ko",
+    "Swedish" : "sv",
+    "Dutch" : "nl",
+    "Polish" : "pl",
+    "Hungarian" : "hu",
+    "Greek" : "el",
+    "Vietnamese" : "vi",
+    "Thai" : "th",
+    "Indonesian" : "id",
+    "Bengali" : "bn",
+    "Turkish" : "tr",
+    "Swahili" : "sw",
+    "Yoruba" : "yo",
+    "Zulu" : "zu",
+    "Amharic" : "am",
+    "Nahuatl" : "nah",
+    "Quechua" : "qu",
+    "Maya" : "myn",
+    "Hindi" : "hi",
+    "Persian" : "fa",
+    "Hebrew" : "he",
+    "Ukrainian" : "uk",
+    "Czech" : "cs
+}''',
 )
 
 chat_session = model.start_chat(
